@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E1BCB8E-1D0C-4DCC-85D1-6BFF25E424ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nucleotide_v2</RootNamespace>
+    <AssemblyName>Nucleotide_v2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicExpresso.Core">
+      <HintPath>..\packages\DynamicExpresso.Core.1.3.1.0\lib\net40\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdjacencyDirectableVisitableNode.cs" />
+    <Compile Include="Diagnostics\PerformanceAnalysisUtility.cs" />
+    <Compile Include="Direct\AdjacencyMatrixDictionaryDirector.cs" />
+    <Compile Include="Direct\AdjacencyMatrixDictionaryDirector1.cs" />
+    <Compile Include="Direct\IAdjacencyDirectableVisitable.cs" />
+    <Compile Include="Direct\IAdjacencyDirector.cs" />
+    <Compile Include="EdgeNode.cs" />
+    <Compile Include="EdgeState.cs" />
+    <Compile Include="Exceptions\AdjacencyException.cs" />
+    <Compile Include="Exceptions\ChosenException.cs" />
+    <Compile Include="Exceptions\IncidenceException.cs" />
+    <Compile Include="Exceptions\NotEnoughEdgesException.cs" />
+    <Compile Include="Exceptions\OrphanedVertexException.cs" />
+    <Compile Include="Exceptions\TooManyEdgesException.cs" />
+    <Compile Include="IChoosable.cs" />
+    <Compile Include="Provide\EdgeNodeDictionaryProvider.cs" />
+    <Compile Include="Provide\INodeDataProvider.cs" />
+    <Compile Include="Provide\MatrixProviderDirector.cs" />
+    <Compile Include="Provide\UndirectedDictionaryMatrixIncidenceProvider.cs" />
+    <Compile Include="IPositionable.cs" />
+    <Compile Include="IWeighted.cs" />
+    <Compile Include="MatrixDataMediator.cs" />
+    <Compile Include="Deprecated\AdjacencyMatrix.cs" />
+    <Compile Include="Deprecated\BitMatrix.cs" />
+    <Compile Include="Deprecated\EdgeNode.cs" />
+    <Compile Include="Deprecated\GraphType.cs" />
+    <Compile Include="Deprecated\UndirectedAdjacencyMatrix.cs" />
+    <Compile Include="Deprecated\UndirectedGraph.cs" />
+    <Compile Include="Factory\AdjacencyMatrixFactory.cs" />
+    <Compile Include="Factory\NodeFactory.cs" />
+    <Compile Include="Factory\VertexNodeFactory.cs" />
+    <Compile Include="IMetaData.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provide\NodeDictionaryProvider.cs" />
+    <Compile Include="Provide\IIncidenceProvider.cs" />
+    <Compile Include="Provide\VertexDictionaryProvider.cs" />
+    <Compile Include="Provide\IAdjacencyProvider.cs" />
+    <Compile Include="Provide\IVertexDataProvider.cs" />
+    <Compile Include="Provide\UndirectedDictionaryMatrixAdjacencyProvider.cs" />
+    <Compile Include="DataExtensions.cs" />
+    <Compile Include="State\EdgeNodeChosenState.cs" />
+    <Compile Include="State\EdgeNodeCutState.cs" />
+    <Compile Include="State\EdgeNodeFlyweightFactory.cs" />
+    <Compile Include="State\EdgeNodeStateFlyweightFactory.cs" />
+    <Compile Include="State\EdgeNodeUnchosenState.cs" />
+    <Compile Include="State\EdgeStateContext.cs" />
+    <Compile Include="State\EdgeNodeState.cs" />
+    <Compile Include="State\INodeState.cs" />
+    <Compile Include="State\NodeFlyweightFactory.cs" />
+    <Compile Include="State\NodeStateContextContainer.cs" />
+    <Compile Include="State\NodeStateContextMediation.cs" />
+    <Compile Include="State\NodeStateFlyweightFactory.cs" />
+    <Compile Include="State\NodeStateMediation.cs" />
+    <Compile Include="State\NodeStateMediationFlyweightFactory.cs" />
+    <Compile Include="State\VertexNodeChosenState.cs" />
+    <Compile Include="State\VertexNodeFlyweightFactory.cs" />
+    <Compile Include="State\VertexNodeState.cs" />
+    <Compile Include="State\VertexNodeStateFlyweightFactory.cs" />
+    <Compile Include="State\VertexNodeUnchosenState.cs" />
+    <Compile Include="VertexNode.cs" />
+    <Compile Include="Visit\IVertexNodeVisitor.cs" />
+    <Compile Include="Visit\VertexNodeVisitor.cs" />
+    <Compile Include="WalkPath.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Observe\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

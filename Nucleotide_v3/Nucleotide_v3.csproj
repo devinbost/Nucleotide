@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{311B04B5-4C91-48D4-8AA5-7CC8441E7414}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nucleotide_v3</RootNamespace>
+    <AssemblyName>Nucleotide_v3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicExpresso.Core">
+      <HintPath>..\packages\DynamicExpresso.Core.1.3.1.0\lib\net40\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Vsa, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\AdjacencyException.cs" />
+    <Compile Include="Exceptions\ChosenException.cs" />
+    <Compile Include="Exceptions\IncidenceException.cs" />
+    <Compile Include="Exceptions\NotEnoughEdgesException.cs" />
+    <Compile Include="Exceptions\NotEnoughVerticesException.cs" />
+    <Compile Include="Exceptions\OrphanedVertexException.cs" />
+    <Compile Include="Exceptions\TooManyEdgesException.cs" />
+    <Compile Include="Exceptions\TooManyVerticesException.cs" />
+    <Compile Include="Exceptions\UnexpectedEdgeStateException.cs" />
+    <Compile Include="Model\AdjacencyProvider.cs" />
+    <Compile Include="Model\EdgeNodeStateContextContainerFactory.cs" />
+    <Compile Include="Model\EdgeNodeStateContextFlyweightFactory.cs" />
+    <Compile Include="Model\INodeStateContextMediator.cs" />
+    <Compile Include="Model\NodeStateContextContainerFacadeFlyweightFactory.cs" />
+    <Compile Include="Model\NodeStateContextExtensions.cs" />
+    <Compile Include="Model\EdgeNode.cs" />
+    <Compile Include="Model\EdgeNodeFactory.cs" />
+    <Compile Include="Model\EdgeNodeStateContext.cs" />
+    <Compile Include="Model\EdgeNodeStateContextContainer.cs" />
+    <Compile Include="Model\EdgeNodeStateContextFactory.cs" />
+    <Compile Include="Model\IncidenceProvider.cs" />
+    <Compile Include="Model\MatrixProvider.cs" />
+    <Compile Include="Model\Node.cs" />
+    <Compile Include="Model\NodeFactory.cs" />
+    <Compile Include="Model\NodeStateContext.cs" />
+    <Compile Include="Model\NodeStateContextContainer.cs" />
+    <Compile Include="Model\NodeStateContextContainerFacade.cs" />
+    <Compile Include="Model\NodeStateContextFactory.cs" />
+    <Compile Include="Model\NodeStateContextMediator.cs" />
+    <Compile Include="Model\SatVertexNode.cs" />
+    <Compile Include="Model\SatVertexNodeFactory.cs" />
+    <Compile Include="Model\SatVertexNodeStateContext.cs" />
+    <Compile Include="Model\VertexNode.cs" />
+    <Compile Include="Model\VertexNodeFactory.cs" />
+    <Compile Include="Model\VertexNodeStateContext.cs" />
+    <Compile Include="Model\VertexNodeStateContextContainer.cs" />
+    <Compile Include="Model\VertexNodeStateContextFactory.cs" />
+    <Compile Include="Model\VertexNodeStateContextFlyweightFactory.cs" />
+    <Compile Include="Model\VertexNodeVisitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\ChosenEdgeNodeState.cs" />
+    <Compile Include="States\ChosenVertexNodeState.cs" />
+    <Compile Include="States\CutEdgeNodeState.cs" />
+    <Compile Include="States\EdgeNodeState.cs" />
+    <Compile Include="States\FemaleChosenEdgeNodeState.cs" />
+    <Compile Include="States\FemaleChosenVertexNodeState.cs" />
+    <Compile Include="States\MaleChosenEdgeNodeState.cs" />
+    <Compile Include="States\MaleChosenVertexNodeState.cs" />
+    <Compile Include="States\NodeState.cs" />
+    <Compile Include="States\OriginChosenVertexNodeState.cs" />
+    <Compile Include="States\UnchosenEdgeNodeState.cs" />
+    <Compile Include="States\UnchosenVertexNodeState.cs" />
+    <Compile Include="States\VertexNodeState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
